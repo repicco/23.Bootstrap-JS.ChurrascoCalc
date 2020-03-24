@@ -2,8 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--CSS-->
-        <link rel="stylesheet" href="css/style.css">
+
 
         <!--JS-->
         <script src="js/main.js"></script>
@@ -23,6 +22,9 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>   
+
+                <!--CSS-->
+                <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <header>
@@ -31,35 +33,66 @@
                     <div class="col-2">
                         <img class="logo" src="https://pngimage.net/wp-content/uploads/2018/06/logo-espetinho-de-churrasco-png-3.png" alt="">
                     </div>
-                    <h1 class="col-6">Calculando seu Churras!!!</h1>
+                    <div class="col-10 text-center">
+                        <h1>Calculando seu Churras!!!</h1>
+                    </div>
                 </div>                
             </div>
         </header>
-        <div class="principal" id="container">
-            <div class="container form-group">
-                <div class="row">
-                    <input class="col-4 form-control" id="carn" type="number" placeholder="Qtd pessoas que comem carne" required>
-    
-                    <input class="col-4 form-control" id="veg" type="number" placeholder="Qtd pessoas vegetarianas" required>
-        
-                    <input class="col-4 form-control" id="hora" type="number" placeholder="Qtd de Horas" required>
+
+        <div class="container">
+            <div id="carouselSite" class="carousel slide container mt-5" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/images.jpg" class="d-block w-100" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Calcule seu Churrasco<h3>
+                        </div>
+                    </div>
+                    <div class="carousel carousel-item">
+                        <img src="img/images2.jpg" class="d-block w-100" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                                <h3>Não gaste acima do que precisa...<h3>
+                        </div>
+                    </div>
                 </div>
-                <input class="col-12 btn btn-success" onclick="calcAlimento()" type="submit" value="Calcular">
-                
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselSite" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselSite" data-slide-to="1"></li>
+                  </ol>
             </div>
+    
+            <div class="principal" id="container">
+                <div class="container form-group">
+                    <div class="row">
+                        <input class="col-4 form-control" id="carn" type="number" placeholder="Qtd pessoas que comem carne" required>
+        
+                        <input class="col-4 form-control" id="veg" type="number" placeholder="Qtd pessoas vegetarianas" required>
+            
+                        <input class="col-4 form-control" id="hora" type="number" placeholder="Qtd de Horas" required>
+                    </div>
+                    <input class="col-12 btn btn-success" onclick="calcAlimento()" type="submit" value="Calcular">
+                </div>
+        </div>
+        
+
+
+
+
+
             <div class="container">
                 <div class="row">
                     <div class="col-6">
                         <div class="row cartao">
                             <h3 class="col-12">Carne</h3>
-                            <img class="col-6 img_card" src="https://www.prezunic.com.br/wp-content/uploads/2019/06/Dia-19-%E2%80%93-Dia-da-Carne-NOTA.png" alt="">
+                            <img class="col-6 img_card" src="img/Carne.jpg" alt="">
                             <h3 class="col-6" id="carne"></h3>
                         </div> 
                     </div>
                     <div class="col-6">
                         <div class="row cartao">
                             <h3 class="col-12">Salada</h3>
-                            <img class="col-6 img_card" src="https://static1.conquistesuavida.com.br/articles//1/99/51/@/28368-quanto-mais-ingredientes-estiverem-na-su-article_block_media-1.jpg" alt="">
+                            <img class="col-6 img_card" src="img/Salada.jpg" alt="">
                             <h3 class="col-6" id="salada"></h3>
                         </div>
                     </div>
@@ -68,14 +101,14 @@
                     <div class="col-6">
                         <div class="row cartao">
                             <h3 class="col-12">Cerveja</h3>
-                            <img class="col-6 img_card" src="https://portalcorreio.com.br/wp-content/uploads/2019/10/cerveja-divulga%C3%A7%C3%A3o.jpg" alt="">
+                            <img class="col-6 img_card" src="img/Cerveja.jpg" alt="">
                             <h3 class="col-6" id="cerveja"></h3>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="row cartao">
                             <h3 class="col-12">Refrigerante</h3>
-                            <img class="col-6 img_card" src="https://pontodopastel.economise.com.br/wp-content/uploads/2019/03/refrigerantes.jpg" alt="">
+                            <img class="col-6 img_card" src="img/Refrigerante.jpg" alt="">
                             <h3 class="col-6" id="refrigerante"></h3>
                         </div>
                     </div>
