@@ -8,9 +8,9 @@ function calcAlimento ( ) {
     
     let Vegetal = (vegetariano * 100 + carnivoro * 50) * horas
 
-    let Cerveja = ((carnivoro + vegetariano) * 365) * horas
+    let Cerveja = ((carnivoro + vegetariano) * 0.365) * horas
 
-    let Refri = ((carnivoro + vegetariano) * 100) * horas
+    let Refri = ((carnivoro + vegetariano) * 0.1) * horas
 
     Total = [Carne, Vegetal, Cerveja, Refri]
 
@@ -23,8 +23,8 @@ function calcAlimento ( ) {
 
     document.getElementById('carne').innerHTML = totalCarne + 'g'
     document.getElementById('salada').innerHTML = totalVegetal + 'g'
-    document.getElementById('cerveja').innerHTML = totalCerveja + 'ml'
-    document.getElementById('refrigerante').innerHTML = totalRefri + 'ml'
+    document.getElementById('cerveja').innerHTML = totalCerveja + 'L'
+    document.getElementById('refrigerante').innerHTML = totalRefri + 'L'
 
     /*
     document.getElementById('cerveja').innerHTML = totalCerveja
