@@ -25,17 +25,6 @@ function calcAlimento ( ) {
     document.getElementById('salada').innerHTML = totalVegetal + 'g'
     document.getElementById('cerveja').innerHTML = totalCerveja + 'L'
     document.getElementById('refrigerante').innerHTML = totalRefri + 'L'
-
-    /*
-    document.getElementById('cerveja').innerHTML = totalCerveja
-    document.getElementById('refrigerante').innerHTML = totalRefri
-
-    console.log(totalCarne + ' ' + totalVegetal  + ' ' + totalCerveja + ' ' + totalRefri)
-    */
 }
-/*
-function calcAlimento ( ) {
 
 
-
-}*/
