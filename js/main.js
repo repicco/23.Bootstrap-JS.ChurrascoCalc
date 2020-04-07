@@ -4,13 +4,13 @@ function calcAlimento ( ) {
     let vegetariano = document.getElementById('veg').value
     let horas = document.getElementById('hora').value
 
-    let Carne = (carnivoro * 50) * horas
+    let Carne = ((carnivoro * 0.4)) * horas
     
-    let Vegetal = (vegetariano * 100 + carnivoro * 50) * horas
+    let Vegetal = ((vegetariano * 0.2) + (carnivoro * 0.15)) * horas
 
     let Cerveja = ((carnivoro + vegetariano) * 0.365) * horas
 
-    let Refri = ((carnivoro + vegetariano) * 0.1) * horas
+    let Refri = ((carnivoro + vegetariano) * 0.3) * horas
 
     Total = [Carne, Vegetal, Cerveja, Refri]
 
@@ -21,10 +21,15 @@ function calcAlimento ( ) {
     let totalCerveja = Total[2]
     let totalRefri = Total[3]
 
-    document.getElementById('carne').innerHTML = totalCarne + 'g'
-    document.getElementById('salada').innerHTML = totalVegetal + 'g'
-    document.getElementById('cerveja').innerHTML = totalCerveja + 'L'
-    document.getElementById('refrigerante').innerHTML = totalRefri + 'L'
+    totalCarne = parseFloat(totalCarne.toFixed(2))
+    totalVegetal = parseFloat(totalVegetal.toFixed(2))
+    totalCerveja = parseFloat(totalCerveja.toFixed(2))
+    totalRefri = parseFloat(totalRefri.toFixed(2))
+
+    document.getElementById('carne').innerHTML = totalCarne + ' kg'
+    document.getElementById('salada').innerHTML = totalVegetal + ' kg'
+    document.getElementById('cerveja').innerHTML = totalCerveja + ' Litros'
+    document.getElementById('refrigerante').innerHTML = totalRefri + ' Litros'
 }
 
 
