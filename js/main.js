@@ -1,4 +1,3 @@
-
 function calcAlimento ( ) {
     let carnivoro = document.getElementById('carn').value
     let vegetariano = document.getElementById('veg').value
@@ -26,5 +25,3 @@ function calcAlimento ( ) {
     document.getElementById('cerveja').innerHTML = totalBebida + ' l'
     document.getElementById('refrigerante').innerHTML = totalBebida + ' l'
 }
-
-
