@@ -1,76 +1,83 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-html, body {
-    height: 100%;
-    background-color: #000;
+html,
+body {
+  height: 100%;
+  background-color: #000;
 }
 
 #container {
-    background-color: #000;
-    height: 90%;
+  background-color: #000;
+  height: 90%;
 }
 
 .principal {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 
 h1 {
-    font-size: 2rem;
-    color: #fff;
+  font-size: 2rem;
+  color: #fff;
 }
 
-h3 {
-    color: #fff;
+h3,
+h4 {
+  color: #fff;
 }
 
 header {
-    width: 100%;
-    background: red;
-    height: 5%;
+  width: 100%;
+  background: red;
+  height: 5%;
 }
 
 .logo {
-    width: 100%;
-    z-index: 1;
+  width: 100%;
+  z-index: 1;
 }
 
 .img_card {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
 .form-control {
-    margin: 2.5% 0 2.5% 0;
-    padding: 0 2% 0 2%;
+  margin: 2.5% 0 2.5% 0;
+  padding: 0 2% 0 2%;
 }
 
 footer {
-    width: 100%;
-    background-color: black;
-    height: 5%;
+  width: 100%;
+  background-color: black;
+  height: 5%;
 }
 
 footer p {
-    color: #fff;
+  color: #fff;
 }
 
 .rodape {
-    text-align: center;
+  text-align: center;
 }
 
 .cartao {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 @media (max-width: 600px) {
-    h1 {
-        font-size: 1.5rem;
-    }
+  h1 {
+    font-size: 1.5rem;
+  }
 
-    h3 {
-        font-size: 0.8rem;
-    }
+  h3,
+  h4 {
+    font-size: 0.8rem;
+  }
+}
+
+.carousel-item {
+  max-height: 350px;
 }

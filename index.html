@@ -65,51 +65,100 @@
             <div class="principal" id="container">
                 <div class="container form-group">
                     <div class="row justify-content-between">
-                    <input class="col-12 col-md-4 offset-md-1  form-control text-center" id="carn" type="number" placeholder="Qtd pessoas que comem carne" required>
-        
-                    <input class="col-12 col-md-4 form-control text-center" id="veg" type="number" placeholder="Qtd pessoas vegetarianas" required>
-                                            
-                    <input class="col-12 offset-1 col-md-3 form-control text-center" id="hora" type="number" placeholder="Qtd de Horas" required>
+                        <input class="col-12 col-md-3 pr-1 pl-1 form-control text-center" id="carnivoros" type="number" placeholder="Qtd come carne e salada" required>
+
+                        <input class="col-12 col-md-3 pr-1 pl-1 form-control text-center" id="criancas" type="number" placeholder="Qtd crianças" required>
+            
+                        <input class="col-12 col-md-3 pr-1 pl-1 form-control text-center" id="vegetarianos" type="number" placeholder="Qtd vegetarianos" required>
+                                                
+                        <input class="col-12  col-md-3 pr-1 pl-1 form-control text-center" id="hora" type="number" placeholder="Qtd de Horas" required>
+                    
                     </div>
-                    <input class="col-12 btn btn-success" onclick="calcAlimento()" type="submit" value="Calcular">
+                    <input class="col-12 btn btn-success" onclick="churrasco.validate()" type="submit" value="Calcular">
                 </div>
-        </div>
+            </div>
         
-
-
-
-
-
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
-                        <div class="row card bg-dark">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
                             <h3 class="col-12 card-header">Carne</h3>
-                            <img class="col-6 card-img-top" src="img/Carne.jpg" alt="">
-                            <h3 class="col-6 card-body" id="carne"></h3>
-                        </div> 
+                            <img class="col-6 offset-3 card-img-top" src="img/Carne.jpg" alt="">
+                            <h4 class="col-12 card-body" id="carne"></h4>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <div class="row card bg-dark">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
                             <h3 class="col-12 card-header">Salada</h3>
-                            <img class="col-6 card-img-top" src="img/Salada.jpg" alt="">
-                            <h3 class="col-6 card-body" id="salada"></h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/Salada.jpg" alt="">
+                            <h4 class="col-12 card-body" id="salada"></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
+                            <h3 class="col-12 card-header">Pão de Alho</h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/PaoAlho.jpg" alt="">
+                            <h4 class="col-12 card-body" id="paoAlho"></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
+                            <h3 class="col-12 card-header">Arroz</h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/Arroz.jpg" alt="">
+                            <h4 class="col-12 card-body" id="arroz"></h4>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
-                        <div class="row card bg-dark">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
                             <h3 class="col-12 card-header">Cerveja</h3>
-                            <img class="col-6 card-img-top" src="img/Cerveja.jpg" alt="">
-                            <h3 class="col-6 card-body" id="cerveja"></h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/Cerveja.jpg" alt="">
+                            <h4 class="col-12 card-body" id="cerveja"></h4>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="row card bg-dark">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
                             <h3 class="col-12 card-header">Refrigerante</h3>
-                            <img class="col-6 card-img-top" src="img/Refrigerante.jpg" alt="">
-                            <h3 class="col-6 card-body" id="refrigerante"></h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/Refrigerante.jpg" alt="">
+                            <h4 class="col-12 card-body" id="refrigerante"></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
+                            <h3 class="col-12 card-header">Carvão</h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/Carvao.jpg" alt="">
+                            <h4 class="col-12 card-body" id="carvao"></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
+                            <h3 class="col-12 card-header">Sal Grosso</h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/SalGrosso.jpg" alt="">
+                            <h4 class="col-12 card-body" id="salGrosso"></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
+                            <h3 class="col-12 card-header">Queijo coalho</h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/Queijo.jpg" alt="">
+                            <h4 class="col-12 card-body" id="queijo"></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
+                            <h3 class="col-12 card-header">Carne Vermelha</h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/CarneVermelha.jpg" alt="">
+                            <h4 class="col-12 card-body" id="carneVermelha"></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="row card bg-dark pt-2 pb-2 text-center justify-content-center">
+                            <h3 class="col-12 card-header">Porco/Frango</h3>
+                            <img class="col-6 offset-3 card-img-top" src="img/CarnePorco.jpg" alt="">
+                            <h4 class="col-12 card-body" id="carneVariadas"></h4>
                         </div>
                     </div>
                 </div>

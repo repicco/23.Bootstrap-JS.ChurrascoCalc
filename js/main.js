@@ -1,27 +1,92 @@
-function calcAlimento ( ) {
-    let carnivoro = document.getElementById('carn').value
-    let vegetariano = document.getElementById('veg').value
-    let horas = document.getElementById('hora').value
+const churrasco = {
+    /* Capturar */
+        /* Declarar */
+            carnivoro: null,
+            criancas: null,
+            vegetariano: null,
+            horas: null,
+        /* Declarar FIM */
+        getElement(id){
+            let get = document.getElementById(id).value
 
-    function calc(value){
-        let total = 0
-        if(value == 'Carne'){
-            total = (carnivoro * 0.4) * (horas / 4)
-        } else if(value == 'Vegetal'){
-            total = (vegetariano * 0.4 + carnivoro * 0.15) * (horas / 4)
-        } else {
-            total = (carnivoro + vegetariano) * 0.5 * (horas / 4)
-            return parseFloat(total.toFixed(3))
-        }
-        return parseFloat(total.toFixed(2))
-    }
-      
-    let totalCarne = calc('Carne')
-    let totalVegetal = calc('Vegetal')
-    let totalBebida = calc()
+            let element =  get ? parseFloat(get) : 0
 
-    document.getElementById('carne').innerHTML = totalCarne + ' kg'
-    document.getElementById('salada').innerHTML = totalVegetal + ' kg'
-    document.getElementById('cerveja').innerHTML = totalBebida + ' l'
-    document.getElementById('refrigerante').innerHTML = totalBebida + ' l'
+            return element
+        },
+        getValues(){
+            carnivoro = this.getElement('carnivoros')
+            criancas = this.getElement('criancas')
+            vegetariano = this.getElement('vegetarianos')
+            horas = this.getElement('hora')
+        },
+    /* Capturar FIM */
+    /* Validar o sistema */
+        validate(){
+            this.getValues()
+
+            let checker = false
+            horas > 0  && carnivoro > 0 || criancas > 0 || vegetariano > 0 ? checker = true : checker = false
+
+            checker ? this.calcAlimento() : alert("Favor preencher a hora e 1 das quantidades de pessoas")
+        },
+    /* Validar o sistema FIM */
+    /* Lógica do sistema */
+        calcAlimento ( ) {
+            let crianca = criancas / 2
+            let carnivoros = carnivoro + crianca
+            let pessoas = carnivoros + vegetariano
+            let adultos = carnivoro + vegetariano
+            
+            let carne = (carnivoros * 0.4) * horas
+            let vegetal = (vegetariano * 0.4 + carnivoros * 0.15) * horas
+            let paoAlho = (pessoas / 4) * horas
+            let arroz = (pessoas * 0.09) * horas
+            let carvao = carne
+            let salGrosso = (carne * 0.0018) * horas
+            let cerveja = ((adultos * 0.7) * horas) * 1000
+            let refrigerante = ((pessoas / 2) * horas) * 1000
+            let queijo = (pessoas / 4) * horas
+        
+            function total(value, type, medida) {
+                if(type == 'kg') {
+                    let volume = parseFloat(value.toFixed(2))
+                                .toString()
+                                .replace('.', ',')
+                    return `${volume} ${medida}`
+                } else if(type == 'l') {
+                    let volume = parseFloat(value.toFixed(3))
+                                .toString()
+                                .replace('.', ',')
+                    return `${volume} ${medida}`
+                } else if(type == 'un') {
+                    let volume = parseFloat(value.toFixed(0))
+                                .toString()
+                                .replace('.', ',')
+                    if(volume <= 0) {
+                        volume = 1
+                    }                        
+                    return `${volume} ${medida}`
+                }
+            }
+
+            document.getElementById('carne').innerHTML = total(carne, 'kg', 'kg')
+            document.getElementById('salada').innerHTML = total(vegetal, 'kg', 'kg')
+            document.getElementById('paoAlho').innerHTML = total(paoAlho, 'un', 'pacote')
+            document.getElementById('arroz').innerHTML = total(arroz, 'kg', 'kg')
+        
+            document.getElementById('cerveja').innerHTML = total(cerveja / 350, 'un', 'Latas')
+            document.getElementById('refrigerante').innerHTML = total(refrigerante / 2000, 'un', 'Pet 2L')
+            document.getElementById('carvao').innerHTML = total(carvao, 'kg', 'kg')
+            document.getElementById('salGrosso').innerHTML = total(salGrosso, 'un', 'pacote')
+            
+            document.getElementById('queijo').innerHTML = total(queijo, 'un', 'pacote')
+            document.getElementById('carneVermelha').innerHTML = total(carne / 2, 'kg', 'kg')
+            document.getElementById('carneVariadas').innerHTML = total(carne / 2, 'kg', 'kg')
+        },
+    /* Lógica do sistema FIM */
+
 }
+
+
+
+
