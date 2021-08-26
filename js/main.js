@@ -37,17 +37,19 @@ const churrasco = {
             let pessoas = carnivoros + vegetariano
             let adultos = carnivoro + vegetariano
             
-            let carne = (carnivoros * 0.4) * horas
-            let vegetal = (vegetariano * 0.4 + carnivoros * 0.15) * horas
+            let carne = (carnivoros * 0.2) * horas
+            let vegetal = (vegetariano * 0.3 + carnivoros * 0.02) * horas
             let paoAlho = (pessoas / 4) * horas
-            let arroz = (pessoas * 0.09) * horas
-            let carvao = carne
-            let salGrosso = (carne * 0.0018) * horas
-            let cerveja = ((adultos * 0.7) * horas) * 1000
-            let refrigerante = ((pessoas / 2) * horas) * 1000
+            let arroz = (pessoas * 0.03) * horas
+            let carvao = carne / 3
+            let salGrosso = (carne * 0.001) * horas
+            let cerveja = ((adultos * 0.5) * horas) * 1000
+            let refrigerante = (((pessoas * 0.2) * horas) / 2)  * 1000
             let queijo = (pessoas / 4) * horas
         
             function total(value, type, medida) {
+                console.log(value)
+
                 if(type == 'kg') {
                     let volume = parseFloat(value.toFixed(2))
                                 .toString()
@@ -71,7 +73,7 @@ const churrasco = {
 
             document.getElementById('carne').innerHTML = total(carne, 'kg', 'kg')
             document.getElementById('salada').innerHTML = total(vegetal, 'kg', 'kg')
-            document.getElementById('paoAlho').innerHTML = total(paoAlho, 'un', 'pacote')
+            document.getElementById('paoAlho').innerHTML = total(paoAlho, 'un', 'unidades')
             document.getElementById('arroz').innerHTML = total(arroz, 'kg', 'kg')
         
             document.getElementById('cerveja').innerHTML = total(cerveja / 350, 'un', 'Latas')
@@ -79,7 +81,7 @@ const churrasco = {
             document.getElementById('carvao').innerHTML = total(carvao, 'kg', 'kg')
             document.getElementById('salGrosso').innerHTML = total(salGrosso, 'un', 'pacote')
             
-            document.getElementById('queijo').innerHTML = total(queijo, 'un', 'pacote')
+            document.getElementById('queijo').innerHTML = total(queijo, 'un', 'unidades')
             document.getElementById('carneVermelha').innerHTML = total(carne / 2, 'kg', 'kg')
             document.getElementById('carneVariadas').innerHTML = total(carne / 2, 'kg', 'kg')
         },
